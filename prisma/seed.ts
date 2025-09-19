@@ -1,76 +1,76 @@
-import { PrismaClient } from '../src/generated/prisma';
-import bcrypt from 'bcryptjs';
+import { PrismaClient } from "../src/generated/prisma";
+import bcrypt from "bcryptjs";
+
+console.log("--- Seed script starting ---");
 
 const prisma = new PrismaClient();
 
 async function main() {
-  // Create tenants
-  const acme = await prisma.tenant.create({
-    data: {
-      name: 'Acme',
-      slug: 'acme',
-      plan: 'FREE',
-    },
-  });
+  console.log("--- Inside main function ---");
 
-  const globex = await prisma.tenant.create({
-    data: {
-      name: 'Globex',
-      slug: 'globex',
-      plan: 'FREE',
-    },
+  // Create tenants
+  console.log("Creating tenants...");
+  const acme = await prisma.tenant.create({
+    data: { name: "Acme", slug: "acme", plan: "FREE" },
   });
+  const globex = await prisma.tenant.create({
+    data: { name: "Globex", slug: "globex", plan: "FREE" },
+  });
+  console.log("Tenants created successfully.");
 
   // Hash password
-  const hashedPassword = await bcrypt.hash('password', 10);
+  console.log("Hashing password...");
+  const hashedPassword = await bcrypt.hash("password", 10);
+  console.log("Password hashed successfully.");
 
   // Create users
+  console.log("Creating users...");
   await prisma.user.create({
     data: {
-      email: 'admin@acme.test',
+      email: "admin@acme.test",
       password: hashedPassword,
-      role: 'ADMIN',
+      role: "ADMIN",
       tenantId: acme.id,
     },
   });
-
   await prisma.user.create({
     data: {
-      email: 'user@acme.test',
+      email: "user@acme.test",
       password: hashedPassword,
-      role: 'MEMBER',
+      role: "MEMBER",
       tenantId: acme.id,
     },
   });
-
   await prisma.user.create({
     data: {
-      email: 'admin@globex.test',
+      email: "admin@globex.test",
       password: hashedPassword,
-      role: 'ADMIN',
+      role: "ADMIN",
       tenantId: globex.id,
     },
   });
-
   await prisma.user.create({
     data: {
-      email: 'user@globex.test',
+      email: "user@globex.test",
       password: hashedPassword,
-      role: 'MEMBER',
+      role: "MEMBER",
       tenantId: globex.id,
     },
   });
+  console.log("Users created successfully.");
 
-  console.log('Seed data created successfully!');
-  console.log('- Tenants: Acme, Globex');
-  console.log('- Users: admin@acme.test, user@acme.test, admin@globex.test, user@globex.test');
+  console.log("--- Seed data created successfully! ---");
 }
 
+console.log("--- Calling main function ---");
 main()
   .catch((e) => {
+    console.error("--- SCRIPT FAILED ---");
     console.error(e);
     process.exit(1);
   })
   .finally(async () => {
+    console.log("--- Disconnecting Prisma Client ---");
     await prisma.$disconnect();
+    console.log("--- Seed script finished ---");
   });
