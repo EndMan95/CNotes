@@ -8,15 +8,10 @@ interface UserPayload {
   role: string;
 }
 
-// Define a more specific context type for dynamic routes
-interface RouteContext {
-  params: { [key: string]: string | string[] | undefined };
-}
-
-// Define the handler type with the updated context
-export type AuthenticatedHandler = (
+// The handler type is now generic. `<T>` will represent the specific context for each route.
+export type AuthenticatedHandler<T> = (
   request: NextRequest,
-  context: RouteContext,
+  context: T,
   payload: UserPayload
 ) => Promise<NextResponse> | NextResponse;
 
@@ -25,10 +20,11 @@ export type AuthenticatedHandler = (
  * @param handler - The API handler function to wrap
  * @returns A new handler that validates JWT and passes user payload to the original handler
  */
-export function withAuth(handler: AuthenticatedHandler) {
+export function withAuth<T>(handler: AuthenticatedHandler<T>) {
+  // This wrapper function is also generic, accepting the specific context type `T`.
   return async function (
     request: NextRequest,
-    context: RouteContext
+    context: T
   ): Promise<NextResponse> {
     try {
       const authHeader = request.headers.get("Authorization");
@@ -49,6 +45,7 @@ export function withAuth(handler: AuthenticatedHandler) {
         );
       }
 
+      // We pass the fully-typed context through to the original handler
       return await handler(request, context, payload as UserPayload);
     } catch (error) {
       console.error("Authentication error:", error);
