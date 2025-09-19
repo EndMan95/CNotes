@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { withAuth, type AuthenticatedHandler } from './withAuth';
+import { NextRequest, NextResponse } from "next/server";
+import { withAuth } from "./withAuth";
 
 // Define the payload type that matches our JWT payload
 interface UserPayload {
@@ -8,10 +8,15 @@ interface UserPayload {
   role: string;
 }
 
-// Define the handler type with the extra payload argument
+// Define a more specific context type for dynamic routes
+interface RouteContext {
+  params: { [key: string]: string | string[] | undefined };
+}
+
+// Define the handler type with the updated context
 export type AdminHandler = (
   request: NextRequest,
-  context: { params: Record<string, string | string[]> },
+  context: RouteContext,
   payload: UserPayload
 ) => Promise<NextResponse> | NextResponse;
 
@@ -21,17 +26,14 @@ export type AdminHandler = (
  * @returns A new handler that validates JWT, checks for admin role, and passes user payload to the original handler
  */
 export function withAdminAuth(handler: AdminHandler) {
-  // First wrap with authentication
   return withAuth(async (request, context, payload) => {
-    // Check if the user has admin role
-    if (payload.role !== 'ADMIN') {
+    if (payload.role !== "ADMIN") {
       return NextResponse.json(
-        { error: 'Forbidden: Admin access required' },
+        { error: "Forbidden: Admin access required" },
         { status: 403 }
       );
     }
-    
-    // If user is admin, call the original handler
+
     return await handler(request, context, payload);
   });
 }
