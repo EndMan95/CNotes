@@ -178,14 +178,10 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## 👤 Contact
 
-**[AloneCoder]**
+**AloneCoder**
 
 
   * **GitHub**: [github.com/al0nec0der](https://www.google.com/search?q=https://github.com/al0nec0der)
   * **LinkedIn**: [linkedin.com/in/codewithteja](https://linkedin.com/in/codewithteja)
 
-<!-- end list -->
 
-
-```
-```
