@@ -72,7 +72,7 @@ Follow these steps to get the project running locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/your-username/cnotes.git](https://github.com/your-username/cnotes.git)
+git clone https://github.com/al0nec0der/cnotes.git cnotes
 cd cnotes
 ````
 
@@ -123,7 +123,7 @@ npm run seed
 npm run dev
 ```
 
-The application should now be running at [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000).
+The application should now be running at [http://localhost:3000](http://localhost:3000).
 
 -----
 
