@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed": "prisma generate && ts-node --project prisma/tsconfig.json prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "prisma generate && ts-node --project prisma/tsconfig.json prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.16.2",
@@ -28,6 +32,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
