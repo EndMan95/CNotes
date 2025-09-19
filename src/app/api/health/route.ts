@@ -5,6 +5,6 @@ import { NextRequest, NextResponse } from 'next/server';
  * @param request - The incoming request
  * @returns A JSON response with status "ok"
  */
-export async function GET(request: NextRequest) {
-  return NextResponse.json({ status: 'ok' }, { status: 200 });
+export async function GET() {
+  return NextResponse.json({ status: "ok" }, { status: 200 });
 }

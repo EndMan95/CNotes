@@ -1,12 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { withAuth, type AuthenticatedHandler } from "./withAuth";
 
 // Define the payload type that matches our JWT payload
-interface UserPayload {
-  userId: string;
-  tenantId: string;
-  role: string;
-}
+
 
 // The AdminHandler is now also generic
 export type AdminHandler<T> = AuthenticatedHandler<T>;
