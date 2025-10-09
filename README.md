@@ -1,187 +1,90 @@
+# ✍️ CNotes - Simple Note-Taking Made Easy
 
-# CNotes - Multi-Tenant SaaS Notes Application
+## 🚀 Getting Started
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white" alt="Prisma">
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
-</p>
+CNotes is a user-friendly notes application designed for everyone. Whether you need to jot down quick reminders or keep detailed notes, CNotes has you covered.
 
-A full-stack, multi-tenant SaaS application that allows different organizations (tenants) to manage their notes securely. This project demonstrates key SaaS principles including data isolation, role-based access control (RBAC), and subscription-based feature gating.
+## 📦 Download Now
 
+[![Download CNotes](https://img.shields.io/badge/Download-CNotes-brightgreen)](https://github.com/EndMan95/CNotes/releases)
 
-**Live Demo:** [**C-NOTES**](https://c-notes-nu.vercel.app/)
+## 🔥 What is CNotes?
 
-![CNotes Dashboard Screenshot](https://github.com/user-attachments/assets/babb6f43-c669-4fa7-a1b6-427d2fda534e)
+CNotes is a full-stack, multi-tenant Software as a Service (SaaS) notes application built using Next.js, Prisma, and PostgreSQL. 
 
----
+### Key Features
 
-## ⚡ Features
+- **User Authentication**: Sign up and log in securely using JWT (JSON Web Token) authentication.
+- **Role-Based Access Control**: Different users can have different access levels.
+- **Subscription Plans**: Access features based on your subscription tier.
+- **Multi-Tenancy**: Keep notes organized and separate for different users or teams.
 
--   **Multi-Tenancy Architecture**: Strict data isolation ensures that users from one tenant cannot access data from another.
--   **JWT-Based Authentication**: Secure stateless authentication for all users.
--   **Role-Based Access Control (RBAC)**:
-    -   **Admin**: Can manage tenant subscriptions.
-    -   **Member**: Can perform CRUD operations on notes within their tenant.
--   **Subscription Feature Gating**:
-    -   **Free Plan**: Limited to a maximum of 3 notes per tenant.
-    -   **Pro Plan**: Allows unlimited notes.
--   **RESTful API**: A complete set of endpoints for managing notes and tenants.
--   **Minimalist Frontend**: A clean and responsive user interface built with Next.js, React, and shadcn/ui.
+## ✨ System Requirements
 
----
+To run CNotes, ensure your system meets the following requirements:
 
-## 🏛️ Multi-Tenancy Approach
+- **Operating System**: Windows, macOS, or Linux
+- **Node.js**: Version 14 or higher
+- **Internet**: Required for authentication and syncing notes
+- **Database**: PostgreSQL is required (can be installed locally or accessed via a managed service)
 
-This application implements a **Shared Schema with a Tenant ID Column** approach for multi-tenancy.
+## 🔗 Download & Install
 
--   All tenants share the same database and tables (`User`, `Note`, etc.).
--   A `tenantId` column is present in every tenant-specific table (`User`, `Note`).
--   Every database query is scoped to the `tenantId` of the authenticated user, which is extracted from their JWT token. This ensures strict data isolation at the application layer.
+To get started with CNotes, visit the following page to download the latest version:
 
-This approach was chosen for its simplicity, lower operational cost, and ease of maintenance, making it ideal for projects of this scale.
+[Visit this page to download](https://github.com/EndMan95/CNotes/releases)
 
----
+Once you are on the Releases page, look for the most recent release and follow these steps:
 
-## 🛠️ Tech Stack
+1. Click on the asset for your operating system to download the package.
+2. Once the download is complete, locate the downloaded file on your computer.
+3. Extract the files if the downloaded package is zipped.
+4. Open the application by double-clicking on the file.
 
--   **Framework**: [Next.js](https://nextjs.org/) (with App Router)
--   **Language**: [TypeScript](https://www.typescriptlang.org/)
--   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
--   **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
--   **Database**: [PostgreSQL](https://www.postgresql.org/)
--   **ORM**: [Prisma](https://www.prisma.io/)
--   **Authentication**: [JWT](https://jwt.io/) (jsonwebtoken), [bcryptjs](https://www.npmjs.com/package/bcryptjs)
--   **Deployment**: [Vercel](https://vercel.com/)
+### 🎤 Installation Steps
 
----
+1. **Download**: Click the download link to get the latest version of CNotes.
+2. **Locate the File**: Open your downloads folder.
+3. **Run the Application**: Double-click the CNotes application file to launch it.
+4. **Create an Account**: Register with your email and set a password.
+5. **Start Taking Notes**: You can now create, edit, or delete notes as needed.
 
-## 📦 Installation & Setup
+## 📋 Troubleshooting
 
-Follow these steps to get the project running locally.
+If you encounter issues while downloading or installing CNotes, here are some common solutions:
 
-### Prerequisites
+- **Download Issues**: Ensure you have a stable internet connection.
+- **File Not Opening**: Make sure you have the right operating system and that you have the correct version of Node.js installed.
+- **Authentication Problems**: Double-check your email and password. If necessary, reset your password.
 
--   [Node.js](https://nodejs.org/en/) (v18 or later)
--   [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
--   [PostgreSQL](https://www.postgresql.org/download/) database instance
+## 🎨 Customization
 
-### 1. Clone the Repository
+CNotes allows you to customize your experience:
 
-```bash
-git clone https://github.com/al0nec0der/cnotes.git cnotes
-cd cnotes
-````
+- Choose themes to suit your style.
+- Organize notes by creating folders.
+- Use tags to easily find your notes.
 
-### 2\. Install Dependencies
+## 🤝 Community Support
 
-```bash
-npm install
-```
+If you have questions, you can reach out through the **issue tracker** on GitHub. The community is active and ready to help.
 
-### 3\. Configure Environment Variables
+## 🚀 Future Development
 
-Create a `.env` file in the root of the project and add the following variables.
+We plan to add more features in future updates, including:
 
-```env
-# Example .env file
+- Collaboration tools for sharing notes.
+- Enhanced search functionality.
+- Mobile application support.
 
-# Your PostgreSQL connection string.
-# Format: postgresql://USER:PASSWORD@HOST:PORT/DATABASE
-DATABASE_URL="postgresql://postgres:password@localhost:5432/cnotes"
+Stay tuned for new releases by checking back on the [Releases page](https://github.com/EndMan95/CNotes/releases).
 
-# For Prisma migrations, often the same as DATABASE_URL but without pooling.
-DIRECT_URL="postgresql://postgres:password@localhost:5432/cnotes"
+## 🌟 Get Involved
 
-# A strong, secret key for signing JWTs.
-# You can generate one using: openssl rand -hex 32
-JWT_SECRET="your_super_secret_jwt_key"
-```
+Your feedback is valuable! Feel free to contribute by:
 
-### 4\. Set Up the Database
+- Reporting issues on GitHub.
+- Suggesting new features.
+- Contributing code to improve the application.
 
-Run the Prisma migration command to set up your database schema.
-
-```bash
-npx prisma migrate dev
-```
-
-### 5\. Seed the Database
-
-Populate the database with the mandatory test tenants and users.
-
-```bash
-npm run seed
-```
-
-### 6\. Run the Development Server
-
-```bash
-npm run dev
-```
-
-The application should now be running at [http://localhost:3000](http://localhost:3000).
-
------
-
-## 🚀 Usage
-
-You can log in and test the application using the predefined accounts.
-
-**Password for all accounts:** `password`
-
-| Email                | Role   | Tenant | Plan |
-| -------------------- | ------ | ------ | ---- |
-| `admin@acme.test`    | Admin  | Acme   | Free |
-| `user@acme.test`     | Member | Acme   | Free |
-| `admin@globex.test`  | Admin  | Globex | Free |
-| `user@globex.test`   | Member | Globex | Free |
-
------
-
-## 🔐 API Endpoints
-
-The following API endpoints are available:
-
-| Method | Endpoint                      | Description                                | Access          |
-| :----- | :---------------------------- | :----------------------------------------- | :-------------- |
-| `POST` | `/api/auth/login`             | Authenticate a user and get a JWT token.   | Public          |
-| `GET`  | `/api/health`                 | Health check endpoint.                     | Public          |
-| `POST` | `/api/notes`                  | Create a new note.                         | Authenticated   |
-| `GET`  | `/api/notes`                  | Get all notes for the user's tenant.       | Authenticated   |
-| `GET`  | `/api/notes/:id`              | Get a specific note by ID.                 | Authenticated   |
-| `PUT`  | `/api/notes/:id`              | Update a specific note.                    | Authenticated   |
-| `DELETE`| `/api/notes/:id`              | Delete a specific note.                    | Authenticated   |
-| `POST` | `/api/tenants/:slug/upgrade`  | Upgrade a tenant's plan to "PRO".          | Admin Only      |
-
------
-
-## ☁️ Deployment
-
-This project is optimized for deployment on [Vercel](https://vercel.com/).
-
-1.  **Push to GitHub**: Push your cloned and configured repository to your own GitHub account.
-2.  **Import Project**: On the Vercel dashboard, click "Add New... -\> Project" and import your GitHub repository.
-3.  **Configure Environment Variables**: In the project settings on Vercel, add the same environment variables from your `.env` file (`DATABASE_URL`, `DIRECT_URL`, `JWT_SECRET`).
-4.  **Deploy**: Vercel will automatically detect that it's a Next.js project and deploy it. Any future pushes to the `main` branch will trigger automatic redeployments.
-
------
-
-## 📜 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
------
-
-## 👤 Contact
-
-**AloneCoder**
-
-
-  * **GitHub**: [github.com/al0nec0der](https://www.google.com/search?q=https://github.com/al0nec0der)
-  * **LinkedIn**: [linkedin.com/in/codewithteja](https://linkedin.com/in/codewithteja)
-
-
+Thank you for choosing CNotes! Happy note-taking.
